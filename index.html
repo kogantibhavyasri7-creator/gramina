@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GramaMart - Fresh groceries, ready to pick up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app-overrides.css">
+  <link rel="stylesheet" href="payment-overrides.css">
+  <link rel="stylesheet" href="order-flow-overrides.css">
+  <link rel="stylesheet" href="accessibility-overrides.css">
+  <link rel="stylesheet" href="role-overrides.css">
+  <link rel="stylesheet" href="location-overrides.css">
+  <link rel="stylesheet" href="availability-overrides.css">
+  <link rel="stylesheet" href="shopkeeper-login.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="languageScreen" class="screen language-screen active">
+      <div class="language-top"><span class="mark">G</span><strong>GramaMart</strong></div>
+      <div class="language-hero">
+        <div class="basket-illustration" aria-hidden="true">🧺<span>🍎</span><i>🥬</i></div>
+        <p class="eyebrow">GRAMAMART</p>
+        <h1 data-i18n="chooseLanguage">Choose your language</h1>
+        <p class="language-help">Shop nearby. Pick up when it suits you.</p>
+      </div>
+      <div id="languageGrid" class="language-grid"></div>
+      <button id="languageContinue" class="primary-btn" data-i18n="continue">Continue</button>
+      <p class="language-note">You can change this later in Settings</p>
+    </section>
+
+    <section id="loginScreen" class="screen onboarding-screen">
+      <div class="onboard-brand"><span class="mark">G</span><strong>GramaMart</strong></div>
+      <div class="onboard-art">📱<span>✓</span></div>
+      <h1 data-i18n="login">Sign in with your mobile number</h1>
+      <p class="onboard-copy">We will send a one-time code to keep your account safe.</p>
+      <div class="role-switch" aria-label="Choose account type"><button class="active" data-role="customer">🛒 Customer</button><button data-role="shopkeeper">🏪 Shop owner</button></div>
+      <label class="mobile-field"><span>+91</span><input id="mobileInput" type="tel" inputmode="numeric" maxlength="10" data-i18n-placeholder="enterMobile" placeholder="Enter mobile number"></label>
+      <button id="sendOtp" class="primary-btn" data-i18n="continue">Continue</button>
+      <p class="terms">By continuing, you agree to shop locally with GramaMart.</p>
+    </section>
+
+    <section id="otpScreen" class="screen onboarding-screen">
+      <div class="onboard-brand"><span class="mark">G</span><strong>GramaMart</strong></div>
+      <div class="onboard-art pin">🔐</div>
+      <h1 data-i18n="verifyOtp">Verify &amp; continue</h1>
+      <p class="onboard-copy">Enter the 4-digit code sent to your mobile.</p>
+      <div class="otp-row"><input aria-label="OTP digit 1" maxlength="1" inputmode="numeric"><input aria-label="OTP digit 2" maxlength="1" inputmode="numeric"><input aria-label="OTP digit 3" maxlength="1" inputmode="numeric"><input aria-label="OTP digit 4" maxlength="1" inputmode="numeric"></div>
+      <button id="verifyOtp" class="primary-btn" data-i18n="continue">Continue</button>
+      <button class="resend-btn" type="button">Resend code</button>
+    </section>
+
+    <section id="profileScreen" class="screen onboarding-screen">
+      <div class="onboard-brand"><span class="mark">G</span><strong>GramaMart</strong></div>
+      <div class="onboard-art">👋</div>
+      <h1 data-i18n="createProfile">Create your profile</h1>
+      <p class="onboard-copy">Just a few details so your shopkeeper can identify your order.</p>
+      <label class="profile-field"><span data-i18n="yourName">Your name</span><input id="nameInput" placeholder="e.g. Lakshmi"></label>
+      <button id="profileContinue" class="primary-btn" data-i18n="continue">Continue</button>
+    </section>
+
+    <section id="ownerProfileScreen" class="screen onboarding-screen owner-profile-screen">
+      <div class="onboard-brand"><span class="mark">G</span><strong>GramaMart</strong></div>
+      <div class="onboard-art pin">🏪</div>
+      <h1>Set up your shop</h1>
+      <p class="onboard-copy">Add your shop details so customers can find and reach you.</p>
+      <label class="profile-field"><span>Owner name</span><input id="ownerNameInput" placeholder="e.g. Ramesh"></label>
+      <label class="profile-field"><span>Shop name</span><input id="ownerShopNameInput" placeholder="e.g. Sri Lakshmi General Store"></label>
+      <label class="profile-field"><span>Shop address</span><input id="ownerShopLocationInput" placeholder="Village, district, state"></label>
+      <label class="profile-field"><span>Shop phone number</span><input id="ownerPhoneInput" type="tel" inputmode="numeric" placeholder="10-digit phone number"></label>
+      <div class="owner-coordinates"><label class="profile-field"><span>Opening time</span><input id="ownerOpeningTimeInput" type="time" value="07:00"></label><label class="profile-field"><span>Closing time</span><input id="ownerClosingTimeInput" type="time" value="20:30"></label></div>
+      <div class="owner-coordinates"><label class="profile-field"><span>Latitude</span><input id="ownerLatitudeInput" type="number" step="any" placeholder="16.6812"></label><label class="profile-field"><span>Longitude</span><input id="ownerLongitudeInput" type="number" step="any" placeholder="80.8381"></label></div>
+      <button id="ownerUseLocation" class="secondary-btn" type="button">📍 Use current shop location</button>
+      <button id="ownerProfileContinue" class="primary-btn" data-i18n="continue">Continue to dashboard</button>
+    </section>
+
+    <section id="villageScreen" class="screen onboarding-screen">
+      <div class="onboard-brand"><span class="mark">G</span><strong>GramaMart</strong></div>
+      <div class="onboard-art pin">📍</div>
+      <h1 data-i18n="selectVillage">Select your village</h1>
+      <p class="onboard-copy">We will show shops that are easy for you to reach.</p><p class="location-login-hint">📍 Your location helps us find nearby shops. You can choose your village if location access is unavailable.</p>
+      <button id="useLocationOption" class="location-village-option"><span>📍</span><span><small>USE DEVICE LOCATION</small><b>My current location</b><em id="loginLocationStatus">Finding your location...</em></span><i>○</i></button><div id="villageOptions"></div>
+      <button id="villageContinue" class="primary-btn location-continue" data-i18n="continue">Continue</button>
+    </section>
+
+    <section id="homeScreen" class="screen home-screen">
+      <header class="home-header"><div><p class="greeting">Good morning, <b id="customerName">Lakshmi</b> 👋</p><h1>Fresh groceries,<br><em>near your home.</em></h1></div><button class="avatar" data-screen="settingsScreen">L</button></header>
+      <button class="location-pill" data-screen="villageScreen">📍 <span id="currentVillage">Kothapalli</span> <b>⌄</b></button>
+      <div class="home-search"><span>⌕</span><input id="homeSearch" data-i18n-placeholder="search" placeholder="Search groceries"><button class="voice-btn" data-voice-search="homeSearch" aria-label="Search by voice">🎙️</button></div>
+      <div class="home-strip"><div><small>NO DELIVERY WAIT</small><strong>Order online.<br>Pick up nearby.</strong></div><button id="speakInstructions" class="speak-btn" aria-label="Hear instructions">🔊</button><span>🛍️</span></div>
+      <div class="home-section-head"><h2 data-i18n="shopCategory">Shop by category</h2><button>See all</button></div>
+      <div id="categoryRow" class="category-row"></div>
+      <div class="home-section-head"><h2 data-i18n="nearbyShops">Nearby shops</h2><button data-screen="shopsScreen">See all</button></div>
+      <div id="homeShops" class="home-shop-list"></div>
+      <nav class="bottom-nav"><button class="active" data-screen="homeScreen">⌂<small data-i18n="home">Home</small></button><button data-screen="shopsScreen">▦<small data-i18n="shops">Shops</small></button><button data-screen="cartScreen">🛒<small data-i18n="cart">Cart</small><b id="cartCount">0</b></button><button data-screen="ordersScreen">▤<small data-i18n="orders">Orders</small></button><button data-screen="settingsScreen">◉<small data-i18n="profile">Profile</small></button></nav>
+    </section>
+
+    <section id="shopsScreen" class="screen shop-screen"><header class="simple-header"><button data-screen="homeScreen">‹</button><strong data-i18n="shops">Nearby shops</strong><button class="text-btn" data-screen="settingsScreen">⚙</button></header><div class="shop-banner"><div><p>YOUR LOCAL MARKET</p><h2>Pick up fresh.<br>Shop with trust.</h2><small>All shops are close to you</small></div><div>🧺</div></div><div class="shop-search"><span>⌕</span><input id="shopSearch" data-i18n-placeholder="search" placeholder="Search groceries"><button class="voice-btn" data-voice-search="shopSearch" aria-label="Search shops by voice">🎙️</button></div><div class="village-map"><div class="map-road"></div><span class="map-pin pin-one">🏪</span><span class="map-pin pin-two">🛒</span><span class="map-pin pin-three">🏬</span><div><b>Shops near <span id="mapVillage">Kothapalli</span></b><small id="locationStatus">Village location</small></div></div><button id="useLiveLocation" class="live-location-btn">📍 Use my live location</button><div id="locationCoordinates" class="location-coordinates" hidden></div><div class="chip-row"><button class="active">All shops</button><button>Open now</button><button>Vegetables</button><button>Staples</button></div><div class="product-section-head"><h2 data-i18n="nearbyShops">Nearby shops</h2><span id="shopCount">14 shops</span></div><div id="shopList"></div><nav class="bottom-nav"></nav></section>
+
+    <section id="productsScreen" class="screen shop-screen"><header class="simple-header"><button data-screen="shopsScreen">‹</button><strong id="selectedShopTitle">Sri Lakshmi Store</strong><button data-screen="cartScreen">🛒</button></header><div class="shop-profile"><span class="shop-logo">🏪</span><div><h2 id="productShopName">Sri Lakshmi General Store</h2><p>Open now · 0.8 km away</p></div><button class="shop-action" id="callShop" aria-label="Call shop">📞</button><button class="shop-action" id="openShopMap" aria-label="Open shop map">📍</button></div><div class="shop-search"><span>⌕</span><input id="productSearch" data-i18n-placeholder="search" placeholder="Search groceries"><button class="voice-btn" data-voice-search="productSearch" aria-label="Search products by voice">🎙️</button></div><div class="chip-row product-chips"><button class="active" data-category="all">All</button><button data-category="Vegetables">Vegetables</button><button data-category="Staples">Staples</button><button data-category="Dairy & eggs">Dairy</button></div><div class="product-section-head"><h2 data-i18n="popularToday">Popular today</h2><span>Fresh stock</span></div><div id="productsGrid" class="products-grid"></div><nav class="bottom-nav"></nav></section>
+
+    <section id="cartScreen" class="screen cart-screen"><header class="simple-header"><button data-screen="productsScreen">‹</button><strong data-i18n="myCart">My cart</strong><button id="clearCart" class="text-btn" data-i18n="clear">Clear</button></header><div id="cartItems"></div><div class="bill-card"><div><span data-i18n="subtotal">Subtotal</span><b id="subtotal">₹0</b></div><div><span data-i18n="pickupFee">Pickup fee</span><b>₹0</b></div><div class="bill-total"><span data-i18n="total">Total amount</span><b id="total">₹0</b></div></div><button id="checkout" class="primary-btn" data-i18n="continuePickup">Continue to pickup</button></section>
+
+    <section id="pickupScreen" class="screen pickup-screen"><header class="simple-header"><button data-screen="cartScreen">‹</button><strong data-i18n="choosePickup">Choose Pickup</strong><span></span></header><p class="page-intro">Choose a nearby shop and a time that works for you.</p><h2 class="block-title" data-i18n="choosePickupShop">Choose pickup shop</h2><div id="pickupShops"></div><h2 class="block-title">Choose a time</h2><div class="pickup-times"><button class="selected">Today<br><b>6:00 PM</b></button><button>Today<br><b>7:30 PM</b></button><button>Tomorrow<br><b>9:00 AM</b></button><button>Tomorrow<br><b>11:30 AM</b></button></div><h2 class="block-title">Payment method</h2><div class="payment-options"><button class="payment-option selected" data-payment="pay_at_shop"><span>🏪</span><span><b>Pay at Shop</b><small>Pay when you collect your order.</small></span><i>✓</i></button><button class="payment-option" data-payment="online"><span>💳</span><span><b>Online Payment</b><small>Secure payment gateway</small></span><i>○</i></button></div><p class="payment-note">No card numbers, UPI PINs, or passwords are stored in GramaMart.</p><button id="placeOrder" class="primary-btn pickup-next" data-i18n="reviewOrder">Review order</button></section>
+
+    <section id="confirmationScreen" class="screen confirmation-screen"><div class="success-mark">✓</div><p class="eyebrow">GRAMAMART</p><h1>Order Confirmed</h1><div class="order-number"><small>ORDER ID</small><strong id="orderNumber">GM50121</strong><span id="orderSummary">Sri Lakshmi General Store</span><div class="confirmation-details"><span>Pickup date<b id="pickupDate">Today</b></span><span>Pickup time<b id="pickupTime">6:00 PM</b></span><span>Total amount<b id="confirmationTotal">₹0</b></span></div><b id="paymentSummary">Pay at Shop · Pay when you collect your order</b></div><div class="order-qr"><div class="qr-code"><i></i><i></i><i></i></div><strong>Show this QR code at the shop</strong><small>Keep your order ID handy too.</small></div><p class="pickup-instructions">Go to the selected shop at your pickup time. Show this QR code or your Order ID, then collect your packed groceries.</p><button id="trackOrder" class="primary-btn" data-i18n="orderTracking">Track my order</button><button class="secondary-btn" data-screen="homeScreen">Continue shopping</button></section>
+
+    <section id="ordersScreen" class="screen orders-screen"><header class="simple-header"><strong data-i18n="myOrders">My orders</strong><button data-screen="settingsScreen">⚙</button></header><div id="ordersList"></div></section>
+    <section id="notificationsScreen" class="screen notifications-screen"><header class="simple-header"><button data-screen="settingsScreen">‹</button><strong data-i18n="notifications">Notifications</strong><span></span></header><div id="notificationsList"></div></section>
+    <section id="helpScreen" class="screen help-screen"><header class="simple-header"><button data-screen="settingsScreen">‹</button><strong data-i18n="help">Help &amp; support</strong><span></span></header><div class="help-hero"><span>🙋</span><h1>We are here to help</h1><p>Need help placing an order or finding your shop?</p></div><button class="help-row" data-help="voice"><span>🔊</span><b>How to use voice search</b><i>›</i></button><button class="help-row" data-help="pickup"><span>🏪</span><b>How pickup works</b><i>›</i></button><button class="help-row" data-help="call"><span>📞</span><b>Talk to GramaMart support</b><i>›</i></button></section>
+    <section id="trackingScreen" class="screen tracking-screen"><header class="simple-header"><button data-screen="ordersScreen">‹</button><strong data-i18n="orderTracking">Order tracking</strong><span></span></header><div class="tracking-card"><small>ORDER ID</small><h2 id="trackingNumber">GM50121</h2><p id="trackingMeta">Sri Lakshmi General Store · Today, 6:00 PM</p><b id="trackingStatus">Order placed</b></div><div class="tracking-qr"><div class="qr-code"><i></i><i></i><i></i></div><span>Show at pickup</span></div><div class="timeline"><div><i>✓</i><div><strong>Order Placed</strong><span>Your order was sent to the shop.</span></div></div><div><i>○</i><div><strong>Shopkeeper Accepted</strong><span>Your shopkeeper will confirm the order.</span></div></div><div><i>○</i><div><strong>Items Being Packed</strong><span>Your groceries are being packed.</span></div></div><div><i>○</i><div><strong>Ready for Pickup</strong><span>Collect it at your chosen shop.</span></div></div><div><i>○</i><div><strong>Order Completed</strong><span>Thank you for shopping with us.</span></div></div></div><button id="cancelOrder" class="secondary-btn">Cancel order</button></section>
+
+    <section id="shopkeeperScreen" class="screen shopkeeper-screen"><header class="simple-header"><button data-screen="settingsScreen">‹</button><strong>Shopkeeper dashboard</strong><span></span></header><div class="merchant-header"><div><p>SRI LAKSHMI GENERAL STORE</p><h1>Order desk</h1></div><span>🏪</span></div><div class="merchant-tools"><button data-merchant-panel="inventory">📦<b>Inventory</b><small>Edit products and stock</small></button><button data-merchant-panel="sales">📊<b>Sales report</b><small>View today's sales</small></button><button data-merchant-panel="shop">🏪<b>Shop profile</b><small>Register or edit shop</small></button></div><div class="owner-map-tools"><strong id="ownerShopAddress">Kothapalli, Andhra Pradesh</strong><small id="ownerLocationStatus">Shop location saved</small><button id="ownerOpenMap" class="secondary-btn" type="button">📍 Open shop in Maps</button><button id="ownerEditProfile" class="secondary-btn" type="button">Edit shop details</button></div><div id="merchantOrderCard"></div><div id="merchantPanel" class="merchant-panel"></div></section>
+
+    <section id="adminScreen" class="screen admin-screen"><header class="simple-header"><button data-screen="settingsScreen">‹</button><strong>Admin dashboard</strong><span></span></header><div class="admin-header"><div><p>GRAMAMART CONTROL CENTRE</p><h1>Village network</h1></div><span>🛡️</span></div><div class="admin-stats"><article><small>Customers</small><b>248</b><em>+12 this month</em></article><article><small>Active shops</small><b>18</b><em>2 pending approval</em></article><article><small>Orders today</small><b>64</b><em>92% completed</em></article><article><small>Sales today</small><b>₹18,420</b><em>Across 6 villages</em></article></div><div class="admin-panel"><div class="admin-panel-head"><h2>Needs attention</h2><button>View all</button></div><button class="admin-list-row"><span>🏪</span><b>2 shops waiting for approval</b><i>›</i></button><button class="admin-list-row"><span>📦</span><b>5 products low in stock</b><i>›</i></button><button class="admin-list-row"><span>🌐</span><b>Translation updates</b><i>›</i></button></div><div class="admin-panel"><div class="admin-panel-head"><h2>Manage platform</h2></div><div class="admin-actions"><button>👥<b>Users</b></button><button>🏪<b>Shops</b></button><button>🧺<b>Products</b></button><button>🌾<b>Villages</b></button><button>🗣️<b>Languages</b></button><button>📋<b>Orders</b></button></div></div></section>
+
+    <section id="settingsScreen" class="screen settings-screen"><header class="simple-header"><button data-screen="homeScreen">‹</button><strong data-i18n="settings">Settings</strong><span></span></header><div class="settings-profile"><span class="avatar large">L</span><div><strong id="settingsName">Lakshmi</strong><p>+91 98765 43210</p></div></div><button class="setting-row" id="changeLanguage"><span>🌐</span><b data-i18n="chooseLanguage">Choose your language</b><i id="languageValue">English</i>›</button><button class="setting-row" data-screen="notificationsScreen"><span>🔔</span><b data-i18n="notifications">Notifications</b><i class="unread-dot"></i>›</button><button class="setting-row" data-screen="helpScreen"><span>❓</span><b data-i18n="help">Help &amp; support</b>›</button><button class="setting-row" data-screen="shopkeeperScreen"><span>🏪</span><b>Shopkeeper view</b>›</button><button class="setting-row" data-screen="adminScreen"><span>🛡️</span><b>Admin view</b>›</button></section>
+    <div id="orderReviewModal" class="modal-backdrop" hidden><div class="order-review-modal"><button class="modal-close" id="closeOrderReview" aria-label="Close">×</button><span>🧺</span><h2>Ready to place your order?</h2><p id="reviewDetails">Your groceries will be packed at the selected shop.</p><div class="review-summary"><span>Total</span><b id="reviewTotal">₹0</b></div><button id="confirmPlaceOrder" class="primary-btn">Yes, place order</button><button id="cancelPlaceOrder" class="secondary-btn">Go back</button></div></div>
+  </main>
+  <div id="networkNotice" class="network-notice" hidden>Slow connection. Showing saved shop and product information.</div>
+  <div id="toast" class="toast"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
